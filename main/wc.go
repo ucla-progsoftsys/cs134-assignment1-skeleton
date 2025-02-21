@@ -2,7 +2,7 @@ package main
 
 import "os"
 import "fmt"
-import "mapreduce"
+import "cs134-assignment1/mapreduce"
 
 import "container/list"
 
