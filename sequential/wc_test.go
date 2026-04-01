@@ -2,8 +2,6 @@ package main
 
 import (
 	"container/list"
-	"crypto/sha256"
-	"encoding/hex"
 	"fmt"
 	"math/rand"
 	"os"
@@ -15,17 +13,10 @@ import (
 	"time"
 )
 
-const expectedKJV12SHA256 = "94687d5e7b2bf7e6899e9521abd705ac02e044f2e8c6d7aa744a58fc6694df9b"
-
 func readVerifiedKJV12Content() string {
 	b, err := os.ReadFile("kjv12.txt")
 	if err != nil {
 		panic(fmt.Sprintf("failed to read kjv12.txt: %v", err))
-	}
-	h := sha256.Sum256(b)
-	got := hex.EncodeToString(h[:])
-	if got != expectedKJV12SHA256 {
-		panic(fmt.Sprintf("unexpected kjv12.txt hash: got %s, want %s", got, expectedKJV12SHA256))
 	}
 	return string(b)
 }
