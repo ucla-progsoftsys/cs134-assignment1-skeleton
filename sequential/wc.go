@@ -40,8 +40,6 @@ func Reduce(key string, values *list.List) string {
 // Use your Map and Reduce functions to do a MapReduce job on the input string
 // For now, do not worry about task division - Map should be called once,
 // and Reduce called once for every unique key output by Map
-// Speed is not a concern for this function - correctness is more important,
-// as we will be implementing distributed MapReduce later!
 func DoMapReduce(input string) []string {
 	// Your code here
 	return nil
